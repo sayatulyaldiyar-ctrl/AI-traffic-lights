@@ -138,4 +138,94 @@
           <div class="text-sm text-white/50 mt-1">Reduction in Congestion</div>
         </div>
         <div class="border-l-2 border-green-500 pl-4">
-          <div class="text-3xl font-bold text-white grotesk">40%</d
+          <div class="text-3xl font-bold text-white grotesk">40%</div>
+                  <p class="text-sm text-slate-500">
+          AI continuously analyzes traffic patterns, vehicle density, and flow in real time.
+        </p>
+      </div>
+
+      <div class="fade-up observe delay-200 bg-white rounded-2xl p-8 border border-green-200 hover:-translate-y-1 transition-all duration-300">
+        <div class="w-14 h-14 rounded-xl bg-green-50 text-green-600 flex items-center justify-center mb-6">
+          <i class="ri-brain-line text-2xl"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-3">Deep Learning</h3>
+        <p class="text-sm text-slate-500">
+          Advanced neural networks predict congestion before it happens and adapt instantly.
+        </p>
+      </div>
+
+      <div class="fade-up observe delay-300 bg-white rounded-2xl p-8 border border-green-200 hover:-translate-y-1 transition-all duration-300">
+        <div class="w-14 h-14 rounded-xl bg-green-50 text-green-600 flex items-center justify-center mb-6">
+          <i class="ri-road-map-line text-2xl"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-3">Smart Routing</h3>
+        <p class="text-sm text-slate-500">
+          Synchronizes intersections to create seamless traffic corridors across the city.
+        </p>
+      </div>
+
+      <div class="fade-up observe delay-400 bg-white rounded-2xl p-8 border border-green-200 hover:-translate-y-1 transition-all duration-300">
+        <div class="w-14 h-14 rounded-xl bg-green-50 text-green-600 flex items-center justify-center mb-6">
+          <i class="ri-leaf-line text-2xl"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-3">Eco Impact</h3>
+        <p class="text-sm text-slate-500">
+          Reduces idle time, lowering emissions and improving air quality.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="bg-slate-900 text-white py-10">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <p class="text-sm text-white/60">
+      © 2026 AI TrafficFlow. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<!-- ══ SCRIPTS ══ -->
+<script>
+  // Navbar scroll effect
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav.classList.add('bg-slate-900/95','backdrop-blur');
+    } else {
+      nav.classList.remove('bg-slate-900/95','backdrop-blur');
+    }
+  });
+
+  // Mobile menu toggle
+  const ham = document.getElementById('hamburger');
+  const mobMenu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('ham-icon');
+
+  ham.addEventListener('click', () => {
+    mobMenu.classList.toggle('hidden');
+    icon.classList.toggle('ri-menu-line');
+    icon.classList.toggle('ri-close-line');
+  });
+
+  // Scroll animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.observe').forEach(el => observer.observe(el));
+
+  // Hero animation trigger
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.hero-anim').forEach(el => {
+      setTimeout(() => el.classList.add('show'), 100);
+    });
+  });
+</script>
+</body>
+</html>
